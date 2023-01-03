@@ -25,3 +25,27 @@ export const loadData =(startDate, endDate)=> async (dispatch) => {
     }
 
 } 
+
+export const appData = async (dispatch)=>{
+
+    try {
+
+        dispatch({
+            type:"appRequest"
+        })
+
+        const {data} = await axios.get("http://go-dev.greedygame.com/v3/dummy/apps")
+        // console.log(data)
+
+        dispatch({
+            type:"appSuccess",
+            payload:data.data,
+        })
+        
+    } catch (error) {
+        dispatch({
+            type:"appFailure",
+            payload: error.response.data.message,
+        })
+    }
+}
