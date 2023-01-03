@@ -8,6 +8,10 @@ export const loadData =(startDate, endDate)=> async (dispatch) => {
             type:"dataRequest",
         })
 
+        const hello = new Date(Date.now());
+        console.log(hello)
+        console.log(startDate)
+
         // const {data} = await axios.get(`http://go-dev.greedygame.com/v3/dummy/report?startDate=${startDate}&endDate=${endDate}`)
         const {data} = await axios.get(`http://go-dev.greedygame.com/v3/dummy/report?startDate=2022-12-01&endDate=2022-12-30`)
         // console.log(data.data);

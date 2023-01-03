@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { appData, loadData } from './Actions/Data'
 import { ToastContainer, toast } from 'react-toastify';
 import Table from './Components/Table';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const App = () => {
 
@@ -10,7 +13,14 @@ const App = () => {
   const { loading, error, data} = useSelector((state) => state.data)
   const { error:errorapps, apps} = useSelector((state) => state.apps)
 
-  console.log(data)
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const sendDate = (startDate, endDate)=>{
+    dispatch(appData(startDate, endDate))
+  }
+
+  // console.log(data)
 
   useEffect(()=>async()=>{
     await dispatch(loadData())
@@ -31,10 +41,14 @@ const App = () => {
     }
   },[dispatch, error, errorapps])
 
+
   return (
     <div className='text-7xl md:px-12'>
-      App
-      {data && apps &&<Table data ={data} apps={apps}/>}
+      <div className='flex text-2xl mb-16'>
+        <p>From: </p><DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
+        <p>To: </p><DatePicker selected={endDate} onChange={(date:Date) =>{ setEndDate(date); sendDate(startDate, endDate)}} />
+      </div>
+      {loading? <div>Loading...</div>: data && apps &&<Table data ={data} apps={apps}/>}
       <ToastContainer />
     </div>
   )
