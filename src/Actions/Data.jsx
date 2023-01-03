@@ -35,7 +35,7 @@ export const appData = async (dispatch)=>{
         })
 
         const {data} = await axios.get("http://go-dev.greedygame.com/v3/dummy/apps")
-        // console.log(data)
+        // console.log(data.data)
 
         dispatch({
             type:"appSuccess",

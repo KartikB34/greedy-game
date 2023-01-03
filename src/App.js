@@ -7,12 +7,14 @@ import Table from './Components/Table';
 const App = () => {
 
   const dispatch = useDispatch()
-  const { error, data} = useSelector((state) => state.data)
+  const { loading, error, data} = useSelector((state) => state.data)
   const { error:errorapps, apps} = useSelector((state) => state.apps)
 
-  useEffect(()=>{
-    dispatch(loadData())
-    dispatch(appData)
+  console.log(data)
+
+  useEffect(()=>async()=>{
+    await dispatch(loadData())
+    await dispatch(appData)
 
     if(error){
       toast.error(error);
@@ -29,12 +31,10 @@ const App = () => {
     }
   },[dispatch, error, errorapps])
 
-  // console.log(data)
-
   return (
-    <div className='text-7xl'>
+    <div className='text-7xl md:px-12'>
       App
-      <Table data ={data} apps={apps}/>
+      {data && apps &&<Table data ={data} apps={apps}/>}
       <ToastContainer />
     </div>
   )
