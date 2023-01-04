@@ -40,7 +40,8 @@ const App = () => {
 
 
   return (
-    <div className='text-7xl md:px-12'>
+    <div className='text-3xl md:px-12'>
+      <p>Analytics</p>
       <div className='flex text-2xl mb-16'>
         {/* <p>From: </p><DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} /> */}
         {/* <p>To: </p><DatePicker selected={endDate} onChange={(date:Date) =>{ setEndDate(date)}} /> */}

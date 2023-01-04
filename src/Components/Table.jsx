@@ -38,37 +38,47 @@ const Table = ({data, apps}) => {
   return (
     <div>
 
-        <div className='flex flex-wrap py-8 mb-8 border rounded-md'>
+        <div className='border rounded-md mb-8 py-8'>
+        <div className='flex flex-wrap ' >
 
 
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view0?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView0(!view0)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view0?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView0(!view0)}>
                 Dates
             </div>
-            {/* <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${viewapp?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setViewApp(!viewapp)}>
+            {/* <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${viewapp?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setViewApp(!viewapp)}>
                 appname
             </div> */}
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view1?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView1(!view1)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view1?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView1(!view1)}>
                 Clicks
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view2?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView2(!view2)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view2?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView2(!view2)}>
                 Requests
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view3?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView3(!view3)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view3?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView3(!view3)}>
                 Ad Response
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view4?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView4(!view4)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view4?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView4(!view4)}>
                 Revenue
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view5?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView5(!view5)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view5?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView5(!view5)}>
                 Impression
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view6?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView6(!view6)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view6?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView6(!view6)}>
                 Fill Rate
             </div>
-            <div className={`border-l-4 mx-4 text-2xl border px-3 py-2 rounded-md border-gray-400 my-2 ${view7?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView7(!view7)}>
+            <div className={`border-l-4 mx-4 text-2xl border px-3 py-1 rounded-md border-gray-400 my-2 ${view7?"border-l-blue-400": "border-l-gray-400" } hover:cursor-pointer`} onClick={()=>setView7(!view7)}>
                 CTR
             </div>
 
+        </div>
+
+        <div className='flex justify-between items-end mt-8 w-full'>
+            <div></div>
+            <div>
+            <button className='outline-none hover:bg-blue-500 border-blue-500 border mr-3 text-lg py-1 px-3 text-blue-500 hover:text-white'>Close</button>
+            <button className='outline-none mr-4 bg-blue-500 border-blue-500 border hover:bg-white text-lg py-1 px-3 text-white hover:text-blue-500'>Apply Changes</button>
+            </div>
+        </div>
         </div>
 
 
