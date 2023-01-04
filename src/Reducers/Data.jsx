@@ -26,16 +26,16 @@ export const dataReducer = createReducer(initialstate,{
 export const appReducer = createReducer(initialstate,{
 
     appRequest:(state) =>{
-        state.loading = true
+        state.appsloading = true
     },
 
     appSuccess: (state, action) => {
-        state.loading = false
+        state.appsloading = false
         state.apps = action.payload;
     },
 
     appFailure: (state, action) => {
-        state.loading = false
+        state.appsloading = false
         state.error = action.payload
     },
 

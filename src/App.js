@@ -11,7 +11,7 @@ const App = () => {
 
   const dispatch = useDispatch()
   const { loading, error, data} = useSelector((state) => state.data)
-  const { error:errorapps, apps} = useSelector((state) => state.apps)
+  const { appsloading, error:errorapps, apps} = useSelector((state) => state.apps)
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -48,7 +48,7 @@ const App = () => {
         <p>From: </p><DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
         <p>To: </p><DatePicker selected={endDate} onChange={(date:Date) =>{ setEndDate(date); sendDate(startDate, endDate)}} />
       </div>
-      {loading? <div>Loading...</div>: data && apps &&<Table data ={data} apps={apps}/>}
+      {loading || appsloading? <div>Loading...</div>: data && apps &&<Table data ={data} apps={apps}/>}
       <ToastContainer />
     </div>
   )
