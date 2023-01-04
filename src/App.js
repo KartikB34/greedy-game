@@ -16,9 +16,6 @@ const App = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const sendDate = (startDate, endDate)=>{
-    dispatch(appData(startDate, endDate))
-  }
 
   // console.log(data)
 
@@ -46,7 +43,7 @@ const App = () => {
     <div className='text-7xl md:px-12'>
       <div className='flex text-2xl mb-16'>
         <p>From: </p><DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
-        <p>To: </p><DatePicker selected={endDate} onChange={(date:Date) =>{ setEndDate(date); sendDate(startDate, endDate)}} />
+        <p>To: </p><DatePicker selected={endDate} onChange={(date:Date) =>{ setEndDate(date)}} />
       </div>
       {loading || appsloading? <div>Loading...</div>: data && apps &&<Table data ={data} apps={apps}/>}
       <ToastContainer />
